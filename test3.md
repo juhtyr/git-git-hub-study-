@@ -1,0 +1,49 @@
+깃 스터디 3장
+
+01-브랜치란?
+-깃으로 버전 관리를 시작하면 기본 main 브랜치가 만들어지며 사용자가 커밋할 때마다 main 브랜치는 무엇이 최신 커밋인지 정보를 가진다.
+-기존 파일은 main브랜치에 유지하며 새 브랜치에서 기존 파일 내용을 수정하거나 새로운 기능을 추가하는데 이를 "분기한다" 라고 한다.
+-작업을 마쳤을 때 분기 했던 브랜치를 main 브랜치에 합치는 것을 병합한다.라고 한다.
+
+02-브랜치 만들기 및 이동하기
+
+git branch //브랜치 목록 확인
+git branch [이름]//브랜치 생성
+
+-현재 작업하고 있는 브랜치 확인 (git log사용)
+git log --online 
+-브랜치 전환
+git switch[이름]//이름에 해당하는 브랜치로 전환
+
+03-브랜치 정보 확인
+
+git log --branches //브랜치마다 최신 커밋을 한 눈에 볼 수 있다.
+git log --graph// 브랜치와 커밋 관계를 더 보기 쉽게 그래프 형태로 표현
+
+04-브랜치 병합하기
+
+(서로 다른 파일)
+-main 브랜치로 전환
+-git merge명령 뒤에 가져올 브랜치 이름 적는다.
+-ls -al을 통해 새 브랜치에 있던 파일이 main 브랜치에 합쳐져 있는지 확인
+(서로다른 브랜치에서 한 문서의 다른 부분을 수정했을 때)
+-main 브랜치로 전환
+-git merge 명령을 통해 새 브랜치를 main 브랜치로 끌어온다.
+-자연스럽게 합쳐짐
+(병합이 끝난 브랜치 삭제하기)
+-git branch //현재 저장소에 어떤 브랜치가 있는지 확인
+-git switch main 
+-git branch -d [이름] //-d옵션을 추가한 후 그 뒤 삭제할 브랜치 이름 사용
+-Deleted branch [이름]//삭제 성공
+
+====문제 풀이====
+
+-git brnach fixed
+-git swich fixed
+-git log --oneline
+-git add
+-git log --graph
+-cat edit.txt
+-git init
+-git merge fixed
+-git branch -d fixed
